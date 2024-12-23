@@ -1,0 +1,7 @@
+package com.example.shipment;
+
+public interface ShipmentService {
+    void addShipment(Shipment shipment);   // Add a shipment
+    void deleteShipment(String trackingNumber);   // Delete a shipment by tracking number
+    Shipment getShipment(String trackingNumber);  // Retrieve shipment details by tracking number
+}

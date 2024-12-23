@@ -1,0 +1,39 @@
+package com.example.shipment;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class ShipmentServiceImpl implements ShipmentService {
+    // In-memory storage for shipments
+    private final Map<String, Shipment> shipmentMap = new HashMap<>();
+
+    @Override
+    public void addShipment(Shipment shipment) {
+        if (shipmentMap.containsKey(shipment.getTrackingNumber())) {
+            System.out.println("Shipment with tracking number " + shipment.getTrackingNumber() + " already exists!");
+        } else {
+            shipmentMap.put(shipment.getTrackingNumber(), shipment);
+            System.out.println("Shipment added successfully: " + shipment);
+        }
+    }
+
+    @Override
+    public void deleteShipment(String trackingNumber) {
+        if (shipmentMap.containsKey(trackingNumber)) {
+            shipmentMap.remove(trackingNumber);
+            System.out.println("Shipment with tracking number " + trackingNumber + " has been deleted.");
+        } else {
+            System.out.println("Shipment with tracking number " + trackingNumber + " not found.");
+        }
+    }
+
+    @Override
+    public Shipment getShipment(String trackingNumber) {
+        if (shipmentMap.containsKey(trackingNumber)) {
+            return shipmentMap.get(trackingNumber);
+        } else {
+            System.out.println("Shipment with tracking number " + trackingNumber + " not found.");
+            return null;
+        }
+    }
+}

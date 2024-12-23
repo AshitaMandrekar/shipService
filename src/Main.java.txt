@@ -1,0 +1,29 @@
+import com.example.shipment.*;
+
+import java.time.LocalDate;
+
+public class Main {
+    public static void main(String[] args) {
+        ShipmentService shipmentService = new ShipmentServiceImpl();
+
+        // Create sample shipments
+        Shipment shipment1 = new Shipment("TN12345", "John", "Doe", "123 Main St", "12345",
+                LocalDate.now(), LocalDate.now().plusDays(5), 100.50);
+
+        Shipment shipment2 = new Shipment("TN67890", "Jane", "Smith", "456 Oak St", "67890",
+                LocalDate.now(), LocalDate.now().plusDays(7), 150.75);
+
+        // Add shipments
+        shipmentService.addShipment(shipment1);
+        shipmentService.addShipment(shipment2);
+
+        // Get a shipment
+        System.out.println("Retrieve Shipment: " + shipmentService.getShipment("TN12345"));
+
+        // Delete a shipment
+        shipmentService.deleteShipment("TN12345");
+
+        // Try to get the deleted shipment
+        System.out.println("Retrieve Deleted Shipment: " + shipmentService.getShipment("TN12345"));
+    }
+}

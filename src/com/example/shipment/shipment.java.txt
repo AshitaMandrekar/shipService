@@ -1,0 +1,107 @@
+package com.example.shipment;
+
+import java.time.LocalDate;
+
+public class Shipment {
+    private String trackingNumber;
+    private String firstName;
+    private String lastName;
+    private String streetAddress;
+    private String pinCode;
+    private LocalDate shipmentDate;
+    private LocalDate deliveryDate;
+    private double chargeAmount;
+
+    // Constructor
+    public Shipment(String trackingNumber, String firstName, String lastName, String streetAddress, 
+                    String pinCode, LocalDate shipmentDate, LocalDate deliveryDate, double chargeAmount) {
+        this.trackingNumber = trackingNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.streetAddress = streetAddress;
+        this.pinCode = pinCode;
+        this.shipmentDate = shipmentDate;
+        this.deliveryDate = deliveryDate;
+        this.chargeAmount = chargeAmount;
+    }
+
+    // Getters and Setters
+    public String getTrackingNumber() {
+        return trackingNumber;
+    }
+
+    public void setTrackingNumber(String trackingNumber) {
+        this.trackingNumber = trackingNumber;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getStreetAddress() {
+        return streetAddress;
+    }
+
+    public void setStreetAddress(String streetAddress) {
+        this.streetAddress = streetAddress;
+    }
+
+    public String getPinCode() {
+        return pinCode;
+    }
+
+    public void setPinCode(String pinCode) {
+        this.pinCode = pinCode;
+    }
+
+    public LocalDate getShipmentDate() {
+        return shipmentDate;
+    }
+
+    public void setShipmentDate(LocalDate shipmentDate) {
+        this.shipmentDate = shipmentDate;
+    }
+
+    public LocalDate getDeliveryDate() {
+        return deliveryDate;
+    }
+
+    public void setDeliveryDate(LocalDate deliveryDate) {
+        this.deliveryDate = deliveryDate;
+    }
+
+    public double getChargeAmount() {
+        return chargeAmount;
+    }
+
+    public void setChargeAmount(double chargeAmount) {
+        this.chargeAmount = chargeAmount;
+    }
+
+    // toString method for better readability
+    @Override
+    public String toString() {
+        return "Shipment{" +
+                "trackingNumber='" + trackingNumber + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", streetAddress='" + streetAddress + '\'' +
+                ", pinCode='" + pinCode + '\'' +
+                ", shipmentDate=" + shipmentDate +
+                ", deliveryDate=" + deliveryDate +
+                ", chargeAmount=" + chargeAmount +
+                '}';
+    }
+}
